@@ -1,0 +1,40 @@
+2025-05-12 19:18:07,164 - INFO - Parsed input: La la land, rating=None, year=2016
+2025-05-12 19:18:07,164 - INFO - Parsed input: Interstellar, rating=4.5, year=2014
+2025-05-12 19:18:07,164 - INFO - Watched movies: [('Interstellar', 4.5, 2014)]
+2025-05-12 19:18:07,164 - INFO - Watchlist movies: [('La la land', None, 2016)]
+2025-05-12 19:18:07,164 - INFO - Starting recommendation process...
+2025-05-12 19:18:07,164 - INFO - Loading datasets...
+2025-05-12 19:18:07,242 - INFO - Loaded MovieLens movies: 62423 rows
+2025-05-12 19:18:20,928 - INFO - Loaded MovieLens ratings: 1000000 rows
+2025-05-12 19:18:20,982 - INFO - Loaded MovieLens links: 62423 rows
+2025-05-12 19:18:21,107 - INFO - Loaded TMDb pre-2016: 10866 rows
+2025-05-12 19:18:21,249 - INFO - Loaded TMDb 2016-2024: 28796 rows
+2025-05-12 19:18:21,316 - WARNING - Found 3 invalid release dates in TMDb 2016-2024
+2025-05-12 19:18:21,328 - WARNING - Found 1 invalid titles in TMDb 2016-2024
+2025-05-12 19:18:21,395 - INFO - Combined TMDb dataset: 39634 rows
+2025-05-12 19:18:21,400 - INFO - Filtered TMDb dataset (vote_count > 20): 21319 rows
+2025-05-12 19:18:21,470 - INFO - Merged dataset: 62423 rows
+2025-05-12 19:18:21,508 - INFO - Matched title: Interstellar (year: 2014) -> Interstellar (year: 2014, vote_count: 6498)
+2025-05-12 19:18:21,508 - INFO - Matched watched: ['Interstellar']
+2025-05-12 19:18:21,533 - INFO - Matched partial: La la land (year: 2016) -> La La Land (year: 2016, vote_count: 17267)
+2025-05-12 19:18:21,533 - INFO - Matched watchlist: ['La La Land']
+2025-05-12 19:18:21,533 - INFO - Training SVD model...
+2025-05-12 19:18:31,703 - INFO - SVD model trained
+2025-05-12 19:18:31,865 - INFO - Building content-based features...
+2025-05-12 19:18:31,959 - INFO - Filtered movies for content features: 21319 rows
+2025-05-12 19:26:23,097 - INFO - TF-IDF matrix shape: (21319, 3000), Top-50 similarities computed
+2025-05-12 19:26:23,123 - INFO - Generating recommendations for user 3...
+2025-05-12 19:26:23,123 - INFO - Normalizing popularity metrics...
+2025-05-12 19:26:23,138 - INFO - TMDb id to MovieLens movieId mapping: 11892 entries
+2025-05-12 19:26:24,054 - INFO - Simulated SVD scores for watched: ['109487'], watchlist: ['313369'], ratings: {'157336': 4.5}
+2025-05-12 19:26:24,532 - INFO - Median release year: 2015
+2025-05-12 19:26:24,532 - INFO - Core genres: {'Music', 'Crime', 'Thriller', 'Romance', 'Drama', 'Science Fiction'}, Allowed genres: {'Music', 'Thriller', 'Adventure', 'Crime', 'Romance', 'Drama', 'Science Fiction', 'Comedy'}, Excluded genres: {'Animation', 'Documentary', 'Horror'}
+2025-05-12 19:29:22,333 - INFO - Filter counts: {'total': 21319, 'watched': 2, 'excluded_genres': 5869, 'no_allowed_genres': 369, 'light_comedy': 2860, 'light_action': 0, 'light_tone': 0, 'director_limit': 4980, 'low_year_weight': 474}
+2025-05-12 19:29:22,333 - INFO - Number of candidates after filtering: 6765
+2025-05-12 19:29:22,421 - INFO - Top 20 movies before selection: ['The Revenant (281957, score: 8.432, genres: Western|Drama|Adventure|Thriller)', 'The Martian (286217, score: 8.213, genres: Drama|Adventure|Science Fiction)', 'Jurassic World (135397, score: 7.314, genres: Action|Adventure|Science Fiction|Thriller)', 'Cinderella (150689, score: 6.458, genres: Romance|Fantasy|Family|Drama)', 'The Big Short (318846, score: 4.639, genres: Comedy|Drama)', 'The Hunger Games: Mockingjay - Part 2 (131634, score: 4.151, genres: War|Adventure|Science Fiction)', 'Mad Max: Fury Road (76341, score: 4.016, genres: Action|Adventure|Science Fiction|Thriller)', 'Ex Machina (264660, score: 2.747, genres: Drama|Science Fiction)', 'The Hateful Eight (273248, score: 2.591, genres: Crime|Drama|Mystery|Western)', 'Bad Hair Day (317198, score: 2.505, genres: TV Movie|Adventure|Comedy)', 'Insurgent (262500, score: 2.258, genres: Adventure|Science Fiction|Thriller)', 'Steve Jobs (321697, score: 2.032, genres: History|Drama)', 'Furious 7 (168259, score: 1.783, genres: Action|Crime|Thriller)', 'San Andreas Quake (339533, score: 1.759, genres: TV Movie|Action|Science Fiction)', 'Star Wars: The Force Awakens (140607, score: 1.643, genres: Action|Adventure|Science Fiction|Fantasy)', 'Taken 3 (260346, score: 1.551, genres: Crime|Action|Thriller)', 'The Age of Adaline (293863, score: 1.474, genres: Fantasy|Drama|Romance)', 'Terminator Genisys (87101, score: 1.406, genres: Science Fiction|Action|Thriller|Adventure)', 'Mr. Holmes (280996, score: 1.361, genres: Mystery|Drama)', 'Chappie (198184, score: 1.150, genres: Crime|Action|Science Fiction)']
+2025-05-12 19:29:22,449 - INFO - Recommendation 'The Martian' rating similarity: 4.50
+2025-05-12 19:29:22,449 - INFO - Recommendation 'The Martian' watched similarity: 0.280
+2025-05-12 19:29:22,449 - INFO - Recommendation 'The Big Short' rating similarity: 4.90
+2025-05-12 19:29:22,449 - INFO - Recommendation 'The Big Short' watched similarity: 0.257
+2025-05-12 19:29:22,454 - INFO - Genre distribution: {'Adventure': 8, 'Science Fiction': 8, 'Drama': 7, 'Action': 5, 'Thriller': 5, 'Fantasy': 2, 'Crime': 2, 'Western': 2, 'Comedy': 2, 'TV Movie': 2, 'Mystery': 1, 'Romance': 1, 'Family': 1, 'War': 1, 'History': 1}
+2025-05-12 19:29:22,454 - INFO - Generated 15 recommendations for user 3
